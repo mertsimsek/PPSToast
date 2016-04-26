@@ -78,6 +78,14 @@
     
 }
 
+-(void)show {
+    
+}
+
+-(void)showAfterDuration:(long)duration {
+    
+}
+
 -(void) setTitle:(NSString*)title{
     
     _title = title;

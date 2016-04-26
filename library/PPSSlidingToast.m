@@ -53,18 +53,24 @@
             
         case fromRightToLeft:
             curveStyle = UIViewAnimationOptionCurveEaseOut;
-            toastView.frame = CGRectMake(toastView.frame.size.width, toastView.frame.origin.y, screenWidth - 30, 50);
+            toastView.frame = CGRectMake(screenWidth, toastView.frame.origin.y, screenWidth - 30, 50);
             initialRect = toastView.frame;
             break;
         case fromUpToDown:
-            curveStyle = UIViewAnimationOptionCurveEaseOut;
+            curveStyle = UIViewAnimationOptionCurveEaseIn;
+            toastView.frame = CGRectMake(toastView.frame.origin.x, 0 - toastView.frame.size.height, screenWidth - 30, 50);
+            initialRect = toastView.frame;
             break;
         case fromDownToUp:
             curveStyle = UIViewAnimationOptionCurveEaseOut;
+            toastView.frame = CGRectMake(toastView.frame.origin.x, screenHeight, screenWidth - 30, 50);
+            initialRect = toastView.frame;
             break;
             
-            
         default:
+            curveStyle = UIViewAnimationOptionCurveEaseIn;
+            toastView.frame = CGRectMake(0 - toastView.frame.size.width, toastView.frame.origin.y, screenWidth - 30, 50);
+            initialRect = toastView.frame;
             break;
     }
     
